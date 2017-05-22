@@ -61,16 +61,16 @@ var GF = function(){
 		this.sprite=0;
 		this.sprites = [];
 		//derecha
-		this.sprites[0] = new Sprite('../res/img/sprites.png', [456, 16*this.id + 65], [16,16], 0.005, [0,1]);
-		this.sprites[1] = new Sprite('../res/img/sprites.png', [583, 65], [16,16], 0.005, [0,1]);
-		this.sprites[2] = new Sprite('../res/img/sprites.png', [615, 65], [16,16], 0.005, [0,1]);
-		this.sprites[3] = new Sprite('../res/img/sprites.png', [588, 84], [10,6], 0.005, [0,1]);
+		this.sprites[0] = new Sprite('./res/img/sprites.png', [456, 16*this.id + 65], [16,16], 0.005, [0,1]);
+		this.sprites[1] = new Sprite('./res/img/sprites.png', [583, 65], [16,16], 0.005, [0,1]);
+		this.sprites[2] = new Sprite('./res/img/sprites.png', [615, 65], [16,16], 0.005, [0,1]);
+		this.sprites[3] = new Sprite('./res/img/sprites.png', [588, 84], [10,6], 0.005, [0,1]);
 		//izquierda
-		this.sprites[4] = new Sprite('../res/img/sprites.png', [488, 16*this.id + 65], [16,16], 0.005, [0,1]);
+		this.sprites[4] = new Sprite('./res/img/sprites.png', [488, 16*this.id + 65], [16,16], 0.005, [0,1]);
 		//arriba
-		this.sprites[5] = new Sprite('../res/img/sprites.png', [520, 16*this.id + 65], [16,16], 0.005, [0,1]);
+		this.sprites[5] = new Sprite('./res/img/sprites.png', [520, 16*this.id + 65], [16,16], 0.005, [0,1]);
 		//abajo
-		this.sprites[6] = new Sprite('../res/img/sprites.png', [552, 16*this.id + 65], [16,16], 0.005, [0,1]);
+		this.sprites[6] = new Sprite('./res/img/sprites.png', [552, 16*this.id + 65], [16,16], 0.005, [0,1]);
 
 		this.draw = function(){
 			if (this.state == Ghost.NORMAL){
@@ -191,7 +191,7 @@ var GF = function(){
 		// haciendo uso de setMapTile
 		$.ajaxSetup({async:false});
 
-		$.get("../res/levels/1.txt", (data) => {    
+		$.get("./res/levels/1.txt", (data) => {    
 			var trozos = data.split("#");
 
 				//cojo el ancho
@@ -364,11 +364,11 @@ var GF = function(){
 		this.angle1 = 0.25;
 		this.angle2 = 1.75;
 		this.sprites = [];
-		this.sprites[0] = new Sprite('../res/img/sprites.png', [454,0], [16,16], 0.005, [0,1,2]);
-		this.sprites[1] = new Sprite('../res/img/sprites.png', [502,0], [16,16], 0.005, [0,1,2,3,4,5,6,7,8,9,10]);
-		this.sprites[2] = new Sprite('../res/img/sprites.png', [454,32], [16,16], 0.005, [0,1]);
-		this.sprites[3] = new Sprite('../res/img/sprites.png', [454,48], [16,16], 0.005, [0,1]);
-		this.sprites[4] = new Sprite('../res/img/sprites.png', [454,16], [16,16], 0.005, [0,1]);
+		this.sprites[0] = new Sprite('./res/img/sprites.png', [454,0], [16,16], 0.005, [0,1,2]);
+		this.sprites[1] = new Sprite('./res/img/sprites.png', [502,0], [16,16], 0.005, [0,1,2,3,4,5,6,7,8,9,10]);
+		this.sprites[2] = new Sprite('./res/img/sprites.png', [454,32], [16,16], 0.005, [0,1]);
+		this.sprites[3] = new Sprite('./res/img/sprites.png', [454,48], [16,16], 0.005, [0,1]);
+		this.sprites[4] = new Sprite('./res/img/sprites.png', [454,16], [16,16], 0.005, [0,1]);
 		this.sprite = 0;
 	};
 
@@ -792,7 +792,7 @@ var GF = function(){
         reset();
 
         resources.load([
-        	'../res/img/sprites.png'
+        	'./res/img/sprites.png'
         	]);
         resources.onReady(init);
 
@@ -818,33 +818,33 @@ var GF = function(){
 
     function loadAssets(){
     	eatpill = new Howl({
-    		src: ['../res/sounds/eat_pill.mp3'],
+    		src: ['./res/sounds/eat_pill.mp3'],
     		volume: 1,
     		onload: function() {
     			eating = new Howl({
-    				src: ['../res/sounds/eating.mp3'],
+    				src: ['./res/sounds/eating.mp3'],
     				volume: 1,
     				onload: function() {
     					siren = new Howl({
-    						src: ['../res/sounds/siren.mp3'],
+    						src: ['./res/sounds/siren.mp3'],
     						autoplay: true,
     						loop: true,
     						volume: 1,
     						onload: function() {
     							waza = new Howl({
-    								src: ['../res/sounds/waza.mp3'],
+    								src: ['./res/sounds/waza.mp3'],
     								volume: 2,
     								onload: function() {
     									die = new Howl({
-    										src: ['../res/sounds/die.mp3'],
+    										src: ['./res/sounds/die.mp3'],
     										volume: 1,
     										onload: function() {
     											eat_ghost = new Howl({
-    												src: ['../res/sounds/eat_ghost.mp3'],
+    												src: ['./res/sounds/eat_ghost.mp3'],
     												volume: 1,
     												onload: function() {
     													ghost_eaten = new Howl({
-    														src: ['../res/sounds/ghost_eaten.mp3'],
+    														src: ['./res/sounds/ghost_eaten.mp3'],
     														volume: 1,
     														onload: function() {
 																requestAnimationFrame(mainLoop); // comenzar animación
